@@ -13,18 +13,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* ensures only one slide shows at a time */
 }
 
 .slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
   height: 100%;
-  width: calc(100% * 68); /* ✅ Ensures all slides fit in one long row */
+  transition: transform 0.5s ease-in-out;
+  /* width will be set dynamically in script.js */
 }
 
 .slide {
-  flex: 0 0 100%; /* ✅ Each slide takes up exactly 100% of the container */
+  flex: 0 0 100%; /* Each slide takes up 100% of the container */
   text-align: center;
 }
 
