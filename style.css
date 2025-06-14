@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   background-color: #000;
@@ -6,6 +7,7 @@ body {
   color: #fff;
 }
 
+/* Container that holds everything */
 .container {
   position: relative;
   width: 100%;
@@ -13,34 +15,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* ensures only one slide shows at a time */
+  overflow: hidden;
 }
 
+/* Slider holds all slides in a horizontal row */
 .slider {
   display: flex;
   height: 100%;
   transition: transform 0.5s ease-in-out;
-  /* width will be set dynamically in script.js */
+  overflow: hidden;
+  width: 100%; /* Will be overridden by JS */
 }
 
+/* Each individual slide */
 .slide {
-  flex: 0 0 100%; /* Each slide takes up 100% of the container */
+  flex: 0 0 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Image styling */
 .slide img {
   max-height: 70vh;
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 20px #fff5;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
+/* Caption styling */
 .caption {
   margin-top: 10px;
   font-size: 1.2rem;
   color: #ccc;
 }
 
+/* Navigation buttons */
 .nav-button {
   position: absolute;
   top: 50%;
