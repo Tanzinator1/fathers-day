@@ -4,7 +4,7 @@ const slider = document.getElementById('slider');
 
 function showSlide(index) {
   const offset = index * -100;
-  slider.style.transform = `translateX(${offset}%)`;
+  //slider.style.transform = `translateX(${offset}%)`;
 }
 
 function nextSlide() {
