@@ -25,15 +25,17 @@ body {
   left: 0;
   width: 200px;
   height: 200px;
-  display: none; /* Hidden by default */
+  overflow: hidden; /* Ensures nothing spills out */
+  display: none;     /* All hidden by default */
   transform: rotateY(calc(var(--i) * 18deg)) translateZ(600px);
 }
 
 .image-container span img {
+  display: block; /* Prevents spacing issues */
   width: 200px;
   height: 200px;
-  object-fit: cover;
-  object-position: top;
+  object-fit: cover;       /* Enforces cropping */
+  object-position: top;    /* Crop from bottom */
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
