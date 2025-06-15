@@ -1,4 +1,4 @@
-const totalImages = 67;
+const totalImages = 68;
 let currentIndex = 0;
 
 const leftPanel = document.getElementById("left-panel");
@@ -25,24 +25,18 @@ function imageExists(src) {
 
 function updatePanels() {
   // Left
-  if (currentIndex > 0) {
-    const leftSrc = getFilename(currentIndex - 1);
-    leftPanel.innerHTML = leftSrc ? `<img src="${leftSrc}" alt="Previous Image" />` : "";
-  } else {
-    leftPanel.innerHTML = "";
-  }
+  const leftIndex = currentIndex === 0 ? 67 : currentIndex - 1;
+  const leftSrc = getFilename(leftIndex);
+  leftPanel.innerHTML = `<img src="${leftSrc}" alt="Previous Image" />`;
 
   // Center
   const centerSrc = getFilename(currentIndex);
-  centerPanel.innerHTML = centerSrc ? `<img src="${centerSrc}" alt="Current Image" />` : "";
+  centerPanel.innerHTML = `<img src="${centerSrc}" alt="Current Image" />`;
 
   // Right
-  if (currentIndex < totalImages - 1) {
-    const rightSrc = getFilename(currentIndex + 1);
-    rightPanel.innerHTML = rightSrc ? `<img src="${rightSrc}" alt="Next Image" />` : "";
-  } else {
-    rightPanel.innerHTML = "";
-  }
+  const rightIndex = currentIndex === 67 ? 0 : currentIndex + 1;
+  const rightSrc = getFilename(rightIndex);
+  rightPanel.innerHTML = `<img src="${rightSrc}" alt="Next Image" />`;
 }
 
 document.getElementById("prev").addEventListener("click", () => {
