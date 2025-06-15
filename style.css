@@ -4,10 +4,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
   font-family: sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .image-container {
@@ -17,6 +16,7 @@ body {
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s ease;
+  margin-top: 40px;
   z-index: 1;
 }
 
@@ -27,7 +27,7 @@ body {
   width: 200px;
   height: 200px;
   overflow: hidden;
-  display: none; /* will be made visible by JS */
+  display: none;
   transform: rotateY(calc(var(--i) * 18deg)) translateZ(600px);
 }
 
@@ -42,9 +42,8 @@ body {
 }
 
 .btn-container {
-  position: relative;
-  margin-top: 30px;
-  z-index: 2; /* ensure it's above the image carousel */
+  margin-top: 20px;
+  z-index: 2;
 }
 
 .btn {
