@@ -7,7 +7,7 @@ const rightPanel = document.getElementById("right-panel");
 
 // Captions: Replace these with your own
 const captions = [
-  "12/21/13 - Christmas at grandmas", "This is caption 2", "This is caption 3", "This is caption 4",
+  "12/21/13 \nChristmas at grandmas", "9/24/16 \nTaking a break on the beach", "9/24/16 \nTrying to push me into the ocean...", "10/29/16 \nGo Badgers!!",
   "This is caption 5", "This is caption 6", "This is caption 7", "This is caption 8",
   "This is caption 9", "This is caption 10", "This is caption 11", "This is caption 12",
   "This is caption 13", "This is caption 14", "This is caption 15", "This is caption 16",
