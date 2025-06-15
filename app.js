@@ -1,87 +1,33 @@
 const totalImages = 68;
-let currentIndex = 1;
+let currentIndex = 0;
 
 const leftPanel = document.getElementById("left-panel");
 const centerPanel = document.getElementById("center-panel");
 const rightPanel = document.getElementById("right-panel");
 
+// Captions: Replace these with your own
 const captions = [
-  "", // index 0 unused
-  "Happy Father's Day!",
-  "Throwback to this moment",
-  "Another great memory",
-  "Family time at its best",
-  "Unforgettable smile",
-  "Proud moment together",
-  "Relaxing Sunday",
-  "Adventure day",
-  "Graduation day",
-  "Picnic in the park",
-  "Sunset memories",
-  "Road trip fun",
-  "Barbecue master",
-  "Holiday cheer",
-  "Laughs and love",
-  "Home sweet home",
-  "Lake day",
-  "Camping trip",
-  "Winter wonderland",
-  "Birthday celebration",
-  "Cooking together",
-  "First steps",
-  "Catching fish",
-  "Playing catch",
-  "Game night",
-  "DIY project",
-  "Hiking trail",
-  "Movie night",
-  "Cheers to you!",
-  "Poolside chill",
-  "Classic car show",
-  "Backyard memories",
-  "Father's wisdom",
-  "Sweet family moment",
-  "Nature walk",
-  "Smiles all around",
-  "Puppy love",
-  "You and me",
-  "Relaxed and happy",
-  "Silly faces",
-  "Vacation vibes",
-  "At the fair",
-  "Birthday cake",
-  "Goofing off",
-  "Look at us",
-  "Making memories",
-  "Old times",
-  "Festive spirit",
-  "Long drive",
-  "Campfire night",
-  "Always there",
-  "Picnic table",
-  "Fall colors",
-  "Lighthouse stop",
-  "Playground fun",
-  "Dad jokes incoming",
-  "Chilling out",
-  "Another favorite",
-  "Sunshine and smiles",
-  "Fishing dock",
-  "Holiday hug",
-  "Together always",
-  "Bonding moment",
-  "Celebration time",
-  "Surprise party",
-  "Dinner time",
-  "Captured forever",
-  "Baking fun",
-  "Joyful day",
-  "Endless love",
-  "Final photo"
+  "This is caption 1", "This is caption 2", "This is caption 3", "This is caption 4",
+  "This is caption 5", "This is caption 6", "This is caption 7", "This is caption 8",
+  "This is caption 9", "This is caption 10", "This is caption 11", "This is caption 12",
+  "This is caption 13", "This is caption 14", "This is caption 15", "This is caption 16",
+  "This is caption 17", "This is caption 18", "This is caption 19", "This is caption 20",
+  "This is caption 21", "This is caption 22", "This is caption 23", "This is caption 24",
+  "This is caption 25", "This is caption 26", "This is caption 27", "This is caption 28",
+  "This is caption 29", "This is caption 30", "This is caption 31", "This is caption 32",
+  "This is caption 33", "This is caption 34", "This is caption 35", "This is caption 36",
+  "This is caption 37", "This is caption 38", "This is caption 39", "This is caption 40",
+  "This is caption 41", "This is caption 42", "This is caption 43", "This is caption 44",
+  "This is caption 45", "This is caption 46", "This is caption 47", "This is caption 48",
+  "This is caption 49", "This is caption 50", "This is caption 51", "This is caption 52",
+  "This is caption 53", "This is caption 54", "This is caption 55", "This is caption 56",
+  "This is caption 57", "This is caption 58", "This is caption 59", "This is caption 60",
+  "This is caption 61", "This is caption 62", "This is caption 63", "This is caption 64",
+  "This is caption 65", "This is caption 66", "This is caption 67", "This is caption 68"
 ];
 
 function getFilename(index) {
-  const filename = `photo${index}`;
+  const filename = `photo${index + 1}`;
   const extensions = ['.jpg', '.JPG', '.jpeg', '.JPEG'];
   for (const ext of extensions) {
     const path = `photos/${filename}${ext}`;
@@ -90,6 +36,7 @@ function getFilename(index) {
   return null;
 }
 
+// Preload and check if image exists
 function imageExists(src) {
   const http = new XMLHttpRequest();
   http.open('HEAD', src, false);
@@ -98,42 +45,31 @@ function imageExists(src) {
 }
 
 function updatePanels() {
-  const leftIndex = currentIndex === 1 ? totalImages : currentIndex - 1;
-  const centerSrc = getFilename(currentIndex);
+  // Left image
+  const leftIndex = currentIndex === 0 ? totalImages - 1 : currentIndex - 1;
   const leftSrc = getFilename(leftIndex);
-  const rightIndex = currentIndex === totalImages ? 1 : currentIndex + 1;
+  leftPanel.innerHTML = `<img src="${leftSrc}" alt="Previous Image" />
+                         <p class="caption">${captions[leftIndex]}</p>`;
+
+  // Center image
+  const centerSrc = getFilename(currentIndex);
+  centerPanel.innerHTML = `<img src="${centerSrc}" alt="Current Image" />
+                           <p class="caption">${captions[currentIndex]}</p>`;
+
+  // Right image
+  const rightIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
   const rightSrc = getFilename(rightIndex);
-
-  [leftPanel, centerPanel, rightPanel].forEach(panel => {
-    panel.style.opacity = 0;
-  });
-
-  setTimeout(() => {
-    leftPanel.innerHTML = `
-      <img src="${leftSrc}" alt="Previous Image" />
-      <p class="caption">${captions[leftIndex] || ""}</p>
-    `;
-    centerPanel.innerHTML = `
-      <img src="${centerSrc}" alt="Current Image" />
-      <p class="caption">${captions[currentIndex] || ""}</p>
-    `;
-    rightPanel.innerHTML = `
-      <img src="${rightSrc}" alt="Next Image" />
-      <p class="caption">${captions[rightIndex] || ""}</p>
-    `;
-    [leftPanel, centerPanel, rightPanel].forEach(panel => {
-      panel.style.opacity = 1;
-    });
-  }, 200);
+  rightPanel.innerHTML = `<img src="${rightSrc}" alt="Next Image" />
+                          <p class="caption">${captions[rightIndex]}</p>`;
 }
 
 document.getElementById("prev").addEventListener("click", () => {
-  currentIndex = currentIndex === 1 ? totalImages : currentIndex - 1;
+  currentIndex = (currentIndex - 1 + totalImages) % totalImages;
   updatePanels();
 });
 
 document.getElementById("next").addEventListener("click", () => {
-  currentIndex = currentIndex === totalImages ? 1 : currentIndex + 1;
+  currentIndex = (currentIndex + 1) % totalImages;
   updatePanels();
 });
 
