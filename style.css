@@ -1,60 +1,62 @@
 body {
   margin: 0;
-  background-color: black;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: white;
-}
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 1300px;
-  height: 300px;
-  margin-bottom: 30px;
-}
-
-.image-panel {
-  width: 400px;
-  height: 500px;
-  background-color: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-.image-panel img {
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  width: 400px;
+  height: 300px;
+  margin: 0 20px;
+  text-align: center;
+  transition: opacity 0.5s ease;
+}
+
+.panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ccc;
+  transition: opacity 0.5s ease;
 }
 
 .btn-container {
-  display: flex;
-  gap: 20px;
+  margin-top: 30px;
 }
 
 .btn {
-  background-color: crimson;
-  color: white;
-  border: none;
   padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 5px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-  filter: brightness(1.2);
+  background: darkred;
 }
