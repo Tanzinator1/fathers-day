@@ -7,75 +7,82 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="image-container">
-    <span style="--i: 1"><img src="photos/photo1.jpg" /></span>
-    <span style="--i: 2"><img src="photos/photo2.jPG" /></span>
-    <span style="--i: 3"><img src="photos/photo3.JPG" /></span>
-    <span style="--i: 4"><img src="photos/photo4.JPG" /></span>
-    <span style="--i: 5"><img src="photos/photo5.JPG" /></span>
-    <span style="--i: 6"><img src="photos/photo6.JPG" /></span>
-    <span style="--i: 7"><img src="photos/photo7.JPG" /></span>
-    <span style="--i: 8"><img src="photos/photo8.JPG" /></span>
-    <span style="--i: 9"><img src="photos/photo9.JPG" /></span>
-    <span style="--i: 10"><img src="photos/photo10.JPEG" /></span>
-    <span style="--i: 11"><img src="photos/photo11.jpg" /></span>
-    <span style="--i: 12"><img src="photos/photo12.JPG" /></span>
-    <span style="--i: 13"><img src="photos/photo13.JPG" /></span>
-    <span style="--i: 14"><img src="photos/photo14.JPG" /></span>
-    <span style="--i: 15"><img src="photos/photo15.JPG" /></span>
-    <span style="--i: 16"><img src="photos/photo16.JPEG" /></span>
-    <span style="--i: 17"><img src="photos/photo17.JPG" /></span>
-    <span style="--i: 18"><img src="photos/photo18.JPEG" /></span>
-    <span style="--i: 19"><img src="photos/photo19.JPG" /></span>
-    <span style="--i: 20"><img src="photos/photo20.jpg" /></span>
-    <span style="--i: 21"><img src="photos/photo21.JPG" /></span>
-    <span style="--i: 22"><img src="photos/photo22.JPG" /></span>
-    <span style="--i: 23"><img src="photos/photo23.JPG" /></span>
-    <span style="--i: 24"><img src="photos/photo24.JPG" /></span>
-    <span style="--i: 25"><img src="photos/photo25.JPG" /></span>
-    <span style="--i: 26"><img src="photos/photo26.JPG" /></span>
-    <span style="--i: 27"><img src="photos/photo27.JPG" /></span>
-    <span style="--i: 28"><img src="photos/photo28.JPG" /></span>
-    <span style="--i: 29"><img src="photos/photo29.JPG" /></span>
-    <span style="--i: 30"><img src="photos/photo30.JPG" /></span>
-    <span style="--i: 31"><img src="photos/photo31.JPG" /></span>
-    <span style="--i: 32"><img src="photos/photo32.JPG" /></span>
-    <span style="--i: 33"><img src="photos/photo33.JPG" /></span>
-    <span style="--i: 34"><img src="photos/photo34.JPG" /></span>
-    <span style="--i: 35"><img src="photos/photo35.JPG" /></span>
-    <span style="--i: 36"><img src="photos/photo36.JPG" /></span>
-    <span style="--i: 37"><img src="photos/photo37.JPEG" /></span>
-    <span style="--i: 38"><img src="photos/photo38.JPG" /></span>
-    <span style="--i: 39"><img src="photos/photo39.JPG" /></span>
-    <span style="--i: 40"><img src="photos/photo40.JPEG" /></span>
-    <span style="--i: 41"><img src="photos/photo41.JPEG" /></span>
-    <span style="--i: 42"><img src="photos/photo42.JPG" /></span>
-    <span style="--i: 43"><img src="photos/photo43.JPG" /></span>
-    <span style="--i: 44"><img src="photos/photo44.JPG" /></span>
-    <span style="--i: 45"><img src="photos/photo45.JPG" /></span>
-    <span style="--i: 46"><img src="photos/photo46.JPG" /></span>
-    <span style="--i: 47"><img src="photos/photo47.JPG" /></span>
-    <span style="--i: 48"><img src="photos/photo48.JPG" /></span>
-    <span style="--i: 49"><img src="photos/photo49.JPG" /></span>
-    <span style="--i: 50"><img src="photos/photo50.JPEG" /></span>
-    <span style="--i: 51"><img src="photos/photo51.JPEG" /></span>
-    <span style="--i: 52"><img src="photos/photo52.JPG" /></span>
-    <span style="--i: 53"><img src="photos/photo53.JPEG" /></span>
-    <span style="--i: 54"><img src="photos/photo54.JPG" /></span>
-    <span style="--i: 55"><img src="photos/photo55.JPG" /></span>
-    <span style="--i: 56"><img src="photos/photo56.JPG" /></span>
-    <span style="--i: 57"><img src="photos/photo57.JPG" /></span>
-    <span style="--i: 58"><img src="photos/photo58.JPG" /></span>
-    <span style="--i: 59"><img src="photos/photo59.JPG" /></span>
-    <span style="--i: 60"><img src="photos/photo60.JPEG" /></span>
-    <span style="--i: 61"><img src="photos/photo61.JPG" /></span>
-    <span style="--i: 62"><img src="photos/photo62.JPG" /></span>
-    <span style="--i: 63"><img src="photos/photo63.JPG" /></span>
-    <span style="--i: 64"><img src="photos/photo64.JPG" /></span>
-    <span style="--i: 65"><img src="photos/photo65.JPG" /></span>
-    <span style="--i: 66"><img src="photos/photo66.JPG" /></span>
-    <span style="--i: 67"><img src="photos/photo67.JPG" /></span>
-    <span style="--i: 68"><img src="photos/photo68.JPG" /></span>
+  <div class="image-container" id="imageContainer">
+    <!-- Group 1 -->
+    <span data-group="0" style="--i: 1"><img src="photos/photo1.jpg" /></span>
+    <span data-group="0" style="--i: 2"><img src="photos/photo2.jPG" /></span>
+    <span data-group="0" style="--i: 3"><img src="photos/photo3.JPG" /></span>
+    <span data-group="0" style="--i: 4"><img src="photos/photo4.JPG" /></span>
+    <span data-group="0" style="--i: 5"><img src="photos/photo5.JPG" /></span>
+    <span data-group="0" style="--i: 6"><img src="photos/photo6.JPG" /></span>
+    <span data-group="0" style="--i: 7"><img src="photos/photo7.JPG" /></span>
+    <span data-group="0" style="--i: 8"><img src="photos/photo8.JPG" /></span>
+    <span data-group="0" style="--i: 9"><img src="photos/photo9.JPG" /></span>
+    <span data-group="0" style="--i: 10"><img src="photos/photo10.JPEG" /></span>
+    <span data-group="0" style="--i: 11"><img src="photos/photo11.jpg" /></span>
+    <span data-group="0" style="--i: 12"><img src="photos/photo12.JPG" /></span>
+    <span data-group="0" style="--i: 13"><img src="photos/photo13.JPG" /></span>
+    <span data-group="0" style="--i: 14"><img src="photos/photo14.JPG" /></span>
+    <span data-group="0" style="--i: 15"><img src="photos/photo15.JPG" /></span>
+    <span data-group="0" style="--i: 16"><img src="photos/photo16.JPEG" /></span>
+    <span data-group="0" style="--i: 17"><img src="photos/photo17.JPG" /></span>
+    <span data-group="0" style="--i: 18"><img src="photos/photo18.JPEG" /></span>
+    <span data-group="0" style="--i: 19"><img src="photos/photo19.JPG" /></span>
+    <span data-group="0" style="--i: 20"><img src="photos/photo20.jpg" /></span>
+
+    <!-- Group 2 -->
+    <span data-group="1" style="--i: 1"><img src="photos/photo21.JPG" /></span>
+    <span data-group="1" style="--i: 2"><img src="photos/photo22.JPG" /></span>
+    <span data-group="1" style="--i: 3"><img src="photos/photo23.JPG" /></span>
+    <span data-group="1" style="--i: 4"><img src="photos/photo24.JPG" /></span>
+    <span data-group="1" style="--i: 5"><img src="photos/photo25.JPG" /></span>
+    <span data-group="1" style="--i: 6"><img src="photos/photo26.JPG" /></span>
+    <span data-group="1" style="--i: 7"><img src="photos/photo27.JPG" /></span>
+    <span data-group="1" style="--i: 8"><img src="photos/photo28.JPG" /></span>
+    <span data-group="1" style="--i: 9"><img src="photos/photo29.JPG" /></span>
+    <span data-group="1" style="--i: 10"><img src="photos/photo30.JPG" /></span>
+    <span data-group="1" style="--i: 11"><img src="photos/photo31.JPG" /></span>
+    <span data-group="1" style="--i: 12"><img src="photos/photo32.JPG" /></span>
+    <span data-group="1" style="--i: 13"><img src="photos/photo33.JPG" /></span>
+    <span data-group="1" style="--i: 14"><img src="photos/photo34.JPG" /></span>
+    <span data-group="1" style="--i: 15"><img src="photos/photo35.JPG" /></span>
+    <span data-group="1" style="--i: 16"><img src="photos/photo36.JPG" /></span>
+    <span data-group="1" style="--i: 17"><img src="photos/photo37.JPEG" /></span>
+    <span data-group="1" style="--i: 18"><img src="photos/photo38.JPG" /></span>
+    <span data-group="1" style="--i: 19"><img src="photos/photo39.JPG" /></span>
+    <span data-group="1" style="--i: 20"><img src="photos/photo40.JPEG" /></span>
+
+    <!-- Group 3 -->
+    <span data-group="2" style="--i: 1"><img src="photos/photo41.JPEG" /></span>
+    <span data-group="2" style="--i: 2"><img src="photos/photo42.JPG" /></span>
+    <span data-group="2" style="--i: 3"><img src="photos/photo43.JPG" /></span>
+    <span data-group="2" style="--i: 4"><img src="photos/photo44.JPG" /></span>
+    <span data-group="2" style="--i: 5"><img src="photos/photo45.JPG" /></span>
+    <span data-group="2" style="--i: 6"><img src="photos/photo46.JPG" /></span>
+    <span data-group="2" style="--i: 7"><img src="photos/photo47.JPG" /></span>
+    <span data-group="2" style="--i: 8"><img src="photos/photo48.JPG" /></span>
+    <span data-group="2" style="--i: 9"><img src="photos/photo49.JPG" /></span>
+    <span data-group="2" style="--i: 10"><img src="photos/photo50.JPEG" /></span>
+    <span data-group="2" style="--i: 11"><img src="photos/photo51.JPEG" /></span>
+    <span data-group="2" style="--i: 12"><img src="photos/photo52.JPG" /></span>
+    <span data-group="2" style="--i: 13"><img src="photos/photo53.JPEG" /></span>
+    <span data-group="2" style="--i: 14"><img src="photos/photo54.JPG" /></span>
+    <span data-group="2" style="--i: 15"><img src="photos/photo55.JPG" /></span>
+    <span data-group="2" style="--i: 16"><img src="photos/photo56.JPG" /></span>
+    <span data-group="2" style="--i: 17"><img src="photos/photo57.JPG" /></span>
+    <span data-group="2" style="--i: 18"><img src="photos/photo58.JPG" /></span>
+    <span data-group="2" style="--i: 19"><img src="photos/photo59.JPG" /></span>
+    <span data-group="2" style="--i: 20"><img src="photos/photo60.JPEG" /></span>
+
+    <!-- Group 4 -->
+    <span data-group="3" style="--i: 1"><img src="photos/photo61.JPG" /></span>
+    <span data-group="3" style="--i: 2"><img src="photos/photo62.JPG" /></span>
+    <span data-group="3" style="--i: 3"><img src="photos/photo63.JPG" /></span>
+    <span data-group="3" style="--i: 4"><img src="photos/photo64.JPG" /></span>
+    <span data-group="3" style="--i: 5"><img src="photos/photo65.JPG" /></span>
+    <span data-group="3" style="--i: 6"><img src="photos/photo66.JPG" /></span>
+    <span data-group="3" style="--i: 7"><img src="photos/photo67.JPG" /></span>
+    <span data-group="3" style="--i: 8"><img src="photos/photo68.JPG" /></span>
   </div>
 
   <div class="btn-container">
