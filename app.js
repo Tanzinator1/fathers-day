@@ -1,4 +1,4 @@
-const totalImages = 68;
+const totalImages = 67;
 let currentIndex = 0;
 
 const leftPanel = document.getElementById("left-panel");
