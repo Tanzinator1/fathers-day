@@ -11,10 +11,10 @@ body {
 
 .image-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   transform-style: preserve-3d;
-  transform: perspective(1500px) rotateY(0deg);
+  transform: perspective(2500px) rotateY(0deg);
   transition: transform 0.7s ease;
 }
 
