@@ -1,20 +1,21 @@
 body {
   margin: 0;
+  background: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: black;
   overflow: hidden;
+  font-family: sans-serif;
 }
 
 .image-container {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(2500px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s ease;
 }
 
@@ -22,15 +23,19 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 200px;
+  height: 200px;
   display: none; /* Hidden by default */
   transform: rotateY(calc(var(--i) * 18deg)) translateZ(600px);
 }
 
 .image-container span img {
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-container {
