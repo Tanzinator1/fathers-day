@@ -1,44 +1,62 @@
-const imageContainer = document.getElementById("imageContainer");
-const spans = Array.from(imageContainer.children);
+const totalImages = 68;
+let currentIndex = 0;
 
-const totalSlides = 68;
-const groupSize = 20;
-let currentGroup = 0;
-let angle = 0;
+const leftPanel = document.getElementById("left-panel");
+const centerPanel = document.getElementById("center-panel");
+const rightPanel = document.getElementById("right-panel");
 
-function updateVisibleGroup() {
-  spans.forEach((span, index) => {
-    const group = Math.floor(index / groupSize);
-    span.style.display = (group === currentGroup) ? "block" : "none";
-  });
-  angle = 0;
-  imageContainer.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+function getFilename(index) {
+  const filename = `photo${index + 1}`;
+  const extensions = ['.jpg', '.JPG', '.jpeg', '.JPEG'];
+  for (const ext of extensions) {
+    const path = `photos/${filename}${ext}`;
+    if (imageExists(path)) return path;
+  }
+  return null;
 }
 
-function rotate(direction) {
-  const currentGroupSlides = spans.slice(
-    currentGroup * groupSize,
-    Math.min((currentGroup + 1) * groupSize, totalSlides)
-  );
-  const steps = currentGroupSlides.length;
-  const angleStep = 360 / steps;
+// Preload and check if image exists
+function imageExists(src) {
+  const http = new XMLHttpRequest();
+  http.open('HEAD', src, false);
+  http.send();
+  return http.status !== 404;
+}
 
-  angle += direction * angleStep;
-
-  if (angle > 360 || angle < -360) {
-    if (direction === -1 && (currentGroup + 1) * groupSize < totalSlides) {
-      currentGroup++;
-    } else if (direction === 1 && currentGroup > 0) {
-      currentGroup--;
-    }
-    updateVisibleGroup();
+function updatePanels() {
+  // Left
+  if (currentIndex > 0) {
+    const leftSrc = getFilename(currentIndex - 1);
+    leftPanel.innerHTML = leftSrc ? `<img src="${leftSrc}" alt="Previous Image" />` : "";
   } else {
-    imageContainer.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+    leftPanel.innerHTML = "";
+  }
+
+  // Center
+  const centerSrc = getFilename(currentIndex);
+  centerPanel.innerHTML = centerSrc ? `<img src="${centerSrc}" alt="Current Image" />` : "";
+
+  // Right
+  if (currentIndex < totalImages - 1) {
+    const rightSrc = getFilename(currentIndex + 1);
+    rightPanel.innerHTML = rightSrc ? `<img src="${rightSrc}" alt="Next Image" />` : "";
+  } else {
+    rightPanel.innerHTML = "";
   }
 }
 
-document.getElementById("next").addEventListener("click", () => rotate(-1));
-document.getElementById("prev").addEventListener("click", () => rotate(1));
+document.getElementById("prev").addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updatePanels();
+  }
+});
 
-// Init
-updateVisibleGroup();
+document.getElementById("next").addEventListener("click", () => {
+  if (currentIndex < totalImages - 1) {
+    currentIndex++;
+    updatePanels();
+  }
+});
+
+updatePanels();
