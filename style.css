@@ -17,6 +17,7 @@ body {
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s ease;
+  z-index: 1;
 }
 
 .image-container span {
@@ -25,23 +26,25 @@ body {
   left: 0;
   width: 200px;
   height: 200px;
-  overflow: hidden; /* Ensures nothing spills out */
-  display: none;     /* All hidden by default */
+  overflow: hidden;
+  display: none; /* will be made visible by JS */
   transform: rotateY(calc(var(--i) * 18deg)) translateZ(600px);
 }
 
 .image-container span img {
-  display: block; /* Prevents spacing issues */
+  display: block;
   width: 200px;
   height: 200px;
-  object-fit: cover;       /* Enforces cropping */
-  object-position: top;    /* Crop from bottom */
+  object-fit: cover;
+  object-position: top;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-container {
+  position: relative;
   margin-top: 30px;
+  z-index: 2; /* ensure it's above the image carousel */
 }
 
 .btn {
@@ -53,6 +56,8 @@ body {
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+  z-index: 2;
+  position: relative;
 }
 
 .btn:hover {
