@@ -1,53 +1,69 @@
 body {
   margin: 0;
-  background-color: #000;
-  color: white;
-  font-family: Arial, sans-serif;
+  background-color: black;
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
+  color: white;
 }
 
-.viewer {
+.carousel {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1300px;
+  height: 300px;
+  margin-bottom: 30px;
 }
 
-.panel {
+.image-panel {
   width: 400px;
   height: 300px;
-  text-align: center;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-.panel img {
+.image-panel img {
   width: 100%;
-  height: 100%;
+  height: 260px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #fff3;
+  object-position: top;
 }
 
 .caption {
-  margin-top: 10px;
+  height: 40px;
   font-size: 1rem;
+  text-align: center;
+  padding: 5px 10px;
   color: #ccc;
 }
 
-button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 5px;
+.btn-container {
+  display: flex;
+  gap: 20px;
 }
 
-button:hover {
-  background-color: #666;
+.btn {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
 }
